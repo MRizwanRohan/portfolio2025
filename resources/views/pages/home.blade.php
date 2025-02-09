@@ -14,7 +14,7 @@
     <div class="container mx-auto px-4 py-8 max-w-7xl">
         <!-- Main 3-column grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            
+
         <!-- Left Column - Profile Image -->
         <div class="w-full h-full">
             <img src="{{ asset('images/pp.jpg') }}" alt="Profile Picture" class="rounded-3xl w-full h-full object-cover shadow-lg">
@@ -31,6 +31,7 @@
             <p class="text-gray-700 text-lg mt-4">
                 Hope you enjoy my portfolio!
             </p>
+            <!-- gujg -->
         </div>
 
         <!-- Education Section -->
