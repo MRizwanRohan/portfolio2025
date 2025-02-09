@@ -31,7 +31,7 @@
             <p class="text-gray-700 text-lg mt-4">
                 Hope you enjoy my portfolio!
             </p>
-            <!-- gujg -->
+            <!-- gujg cnhnftm7u56n  -->
         </div>
 
         <!-- Education Section -->
