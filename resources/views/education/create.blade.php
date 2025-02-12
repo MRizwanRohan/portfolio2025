@@ -20,6 +20,7 @@
                                 <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                             @enderror
                         </div>
+                        <input type="hidden" name="professional_id" value="{{ $professional->id }}">
 
                         <!-- Degree -->
                         <div>

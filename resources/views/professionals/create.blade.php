@@ -5,15 +5,23 @@
     <div class="max-w-4xl mx-auto">
         <div class="bg-white p-8 rounded-lg shadow-lg">
             <h2 class="text-center text-2xl font-semibold text-gray-800 mb-6">Create Professional</h2>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
 
             <form action="{{ route('professionals.store') }}" method="POST">
                 @csrf
 
                 <div class="space-y-6">
                     <!-- First Name -->
+                    @foreach ($professionals as $professional)
                     <div>
                         <label for="first_name" class="block text-lg font-medium text-gray-700">First Name</label>
-                        <input type="text" name="first_name" class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-black @error('first_name') border-red-500 @enderror" required>
+                        <input type="text" name="first_name"
+                          value="{{ $professional->first_name ?? '' }}"
+                         class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-black @error('first_name') border-red-500 @enderror" >
                         @error('first_name')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
@@ -22,7 +30,9 @@
                     <!-- Last Name -->
                     <div>
                         <label for="last_name" class="block text-lg font-medium text-gray-700">Last Name</label>
-                        <input type="text" name="last_name" class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-black @error('last_name') border-red-500 @enderror" required>
+                        <input type="text" name="last_name"
+                          value="{{ $professional->last_name ?? '' }}"
+                         class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-black @error('last_name') border-red-500 @enderror" >
                         @error('last_name')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
@@ -31,20 +41,29 @@
                     <!-- Display Name -->
                     <div>
                         <label for="display_name" class="block text-lg font-medium text-gray-700">Display Name</label>
-                        <input type="text" name="display_name" class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-black @error('display_name') border-red-500 @enderror">
+                        <input type="text" name="display_name"
+                          value="{{ $professional->display_name ?? '' }}"
+                         class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-black @error('display_name') border-red-500 @enderror" >
                         @error('display_name')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
                     </div>
 
+                    <!-- Email -->
+
                     <!-- Bio -->
                     <div>
                         <label for="bio" class="block text-lg font-medium text-gray-700">Bio</label>
-                        <textarea name="bio" class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-black @error('bio') border-red-500 @enderror"></textarea>
+                        <textarea name="bio"
+
+                         class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-black @error('bio') border-red-500 @enderror">{{ $professional->bio ?? '' }}
+                        </textarea>
                         @error('bio')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
                         @enderror
+
                     </div>
+                    @endforeach
 
                     <!-- Submit Button -->
                     <div class="text-center mt-6">

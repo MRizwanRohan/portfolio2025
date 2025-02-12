@@ -9,25 +9,34 @@ class ProfessionalController extends Controller
 {
     public function index()
     {
-        $professionals = Professional::all();
-        return view('professionals.index', compact('professionals'));
+        $professional= Professional::first();
+        return view('professionals.index', compact('professional'));
     }
 
     public function create()
     {
-        return view('professionals.create');
+         $professional = Professional::first();
+        return view('professionals.create', compact('professional'));
     }
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:professionals',
-            'phone' => 'required',
-            // Add other fields as needed
-        ]);
+    $validated= $request->validate([
+        'first_name' => 'required',
+        'last_name' => 'required',
 
-        Professional::create($validated);
+
+        'display_name' => 'required',
+        'bio' => 'required',
+        'profile_image_url' => 'nullable',
+        'portfolio_url' => 'nullable',
+    ]);
+       $professional = Professional::updateOrCreate(
+            ['id' =>1],
+            $validated
+        );
+
+        return back()->with('success', 'Professional created successfully');
         return redirect()->route('professionals.index')->with('success', 'Professional created successfully');
     }
 
