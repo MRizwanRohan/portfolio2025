@@ -108,6 +108,28 @@
         </div>
     </section>
 
+<div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row items-center">
+        <!-- Title -->
+        <div class="md:w-1/4 mb-4 md:mb-0 flex justify-center">
+            <h1 class="text-3xl md:text-4xl font-bold tracking-wider text-gray-800 whitespace-nowrap transform rotate-90 origin-left">
+                ILLUSTRATIONS<br />OF BOYS TOYS
+            </h1>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="md:w-3/4">
+            <img
+                src="/images/Frame 2.png"
+                alt="Fantasy landscape with towers and nature"
+                class="w-full h-auto object-cover rounded-lg shadow-lg"
+            />
+        </div>
+    </div>
+</div>
+
+
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-800">
         <main class="container mx-auto px-4 py-12">
@@ -116,7 +138,7 @@
                 <div class="space-y-6">
                     <h1 class="text-orange-500 text-6xl md:text-7xl font-bold">Contact Me</h1>
                     <p class="text-gray-300 max-w-md">
-                        Have something on your mind? I’m just a message away. Feel free to reach out anytime — I’m always happy to connect and chat!
+                        Have something on your mind? I'm just a message away. Feel free to reach out anytime — I'm always happy to connect and chat!
                     </p>
                 </div>
 

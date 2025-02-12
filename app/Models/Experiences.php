@@ -15,4 +15,9 @@ protected $fillable = [
     'end_date',
     'is_current',
 ];
+
+public function professional()
+{
+    return $this->belongsTo(Professional::class);
+}
 }

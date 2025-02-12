@@ -1,8 +1,9 @@
 <?php
-use App\Http\Controllers\ProfessionalController;
+
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\ProfessionalController;
 use Illuminate\Support\Facades\Route;
 
 

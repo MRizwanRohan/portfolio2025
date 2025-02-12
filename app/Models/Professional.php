@@ -15,4 +15,10 @@ protected $fillable = [
     'portfolio_url',
 ];
 
+public function education()
+{
+    return $this->hasMany(Education::class);
+}
+
+
 }
