@@ -6,6 +6,17 @@
     <title>Your Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+    
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        .cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
         @keyframes slideIn {
             from {
                 opacity: 0;

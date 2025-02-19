@@ -2,12 +2,20 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section id="home" class="h-screen flex justify-center items-center text-center bg-cover bg-center relative" style="background-image: url('/images/bg.jpg');">
-        <div class="animate-section text-white">
-            <h1 class="text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
-            <p class="text-xl">This is the home section of my portfolio.</p>
-        </div>
-    </section>
+<div class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <section class="container mx-auto px-4">
+            <div class="animate-section text-white">
+                <h1 class="text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
+            </div>
+            <div class="Introduction mt-8">
+                <h1 class="text-3xl font-mono">
+                    Hello, I'm <span id="typed-text" class="text-green-400 cursor"></span>
+                </h1>
+            </div>
+        </section>
+</div>
+
+
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-gray-50">
@@ -183,4 +191,50 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const phrases = [
+            "M Rizwan Uddin",
+            "Project Manager, Softexel Limited"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isPaused = false;
+        let pauseEnd = 0;
+
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+            const typedTextSpan = document.getElementById("typed-text");
+
+            if (isPaused && Date.now() > pauseEnd) {
+                isPaused = false;
+                isDeleting = true;
+            }
+
+            if (!isPaused) {
+                if (!isDeleting && charIndex <= currentPhrase.length) {
+                    typedTextSpan.textContent = currentPhrase.substring(0, charIndex);
+                    charIndex++;
+                    if (charIndex > currentPhrase.length) {
+                        isPaused = true;
+                        pauseEnd = Date.now() + 2000; // Pause for 2 seconds
+                    }
+                } else if (isDeleting && charIndex >= 0) {
+                    typedTextSpan.textContent = currentPhrase.substring(0, charIndex);
+                    charIndex--;
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                    }
+                }
+            }
+
+            const speedFactor = isDeleting ? 2 : 1;
+            const speed = isPaused ? 50 : Math.random() * 100 + 50;
+            setTimeout(typeEffect, speed / speedFactor);
+        }
+
+        document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
 @endsection
