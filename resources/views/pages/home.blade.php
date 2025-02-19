@@ -9,7 +9,7 @@
             </div>
             <div class="Introduction mt-8">
                 <h1 class="text-3xl font-mono">
-                    Hello, I'm <span id="typed-text" class="text-green-400 cursor"></span>
+                    Hello, <span id="typed-text" class="text-green-400 cursor"></span>
                 </h1>
             </div>
         </section>
@@ -194,8 +194,8 @@
 
     <script>
         const phrases = [
-            "M Rizwan Uddin",
-            "Project Manager, Softexel Limited"
+            "I'm M Rizwan Uddin",
+            "Project Manager, Softexel Limited."
         ];
         let phraseIndex = 0;
         let charIndex = 0;
