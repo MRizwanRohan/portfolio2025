@@ -2,14 +2,14 @@
 
 @section('content')
     <!-- Hero Section -->
-<div class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+<div class="bg-black text-white min-h-screen flex items-center justify-center">
     <section class="container mx-auto px-4">
             <div class="animate-section text-white">
                 <h1 class="text-5xl font-bold mb-4">Welcome to My Portfolio</h1>
             </div>
             <div class="Introduction mt-8">
                 <h1 class="text-3xl font-mono">
-                    Hello, <span id="typed-text" class="text-green-400 cursor"></span>
+                    Hello, <span id="typed-text" class="text-orange-500 font-bold cursor"></span>
                 </h1>
             </div>
         </section>
